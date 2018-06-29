@@ -6,11 +6,19 @@ var dummyData = [{taskText: "get groceries", completed: true }, { taskText: "get
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      todos: []
+    }
   }
+
+  componentDidMount() {
+    this.setState({todos: dummyData})
+  }
+
   render() {
     return (
       <ul>
-        {dummyData.map((element) => <li><button>X</button>{element.completed ? <strike>{element.taskText}</strike> : element.taskText}
+        {this.state.todos.map((element) => <li><button>X</button>{element.completed ? <strike>{element.taskText}</strike> : element.taskText}
         </li>)}
 
       </ul>
