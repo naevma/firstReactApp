@@ -10,7 +10,8 @@ class TodoList extends React.Component {
     var todoList = this.props.todos.slice()
     var renderTodos = function() {
       return todoList.map((todo) => {
-        return <Todo todo = {todo} />
+        console.log(todo)
+        return <Todo taskText = {todo.taskText}  completed={todo.completed}/>
       });
     }
     return (

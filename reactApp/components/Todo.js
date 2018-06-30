@@ -1,8 +1,10 @@
 import React from 'react';
 
-export const Todo = props =>{
+const Todo = props =>{
+console.log(props);
   return (
-    <li><button>X</button>{props.completed ? <strike>{props.taskText}</strike> : props.taskText}</li>
+    props.completed ? <li><button>X</button><strike>{props.taskText}</strike></li> : <li><button>X</button>{props.taskText}</li>
   )
 
 }
+export default Todo;
